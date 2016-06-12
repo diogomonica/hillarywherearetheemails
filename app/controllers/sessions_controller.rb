@@ -10,6 +10,8 @@ class SessionsController < ApplicationController
                       :uid => auth['uid'].to_s).first || User.create_with_omniauth(auth)
     reset_session
     session[:user_id] = user.id
+    session[:access_token] = user.oauth_token
+    session[:access_secret] = user.oauth_secret
     redirect_to root_url, :notice => 'Signed in!'
   end
 
@@ -21,5 +23,4 @@ class SessionsController < ApplicationController
   def failure
     redirect_to root_url, :alert => "Authentication error: #{params[:message].humanize}"
   end
-
 end

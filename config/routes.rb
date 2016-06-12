@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'tweets/new'
+
+  get 'tweets/create'
+
+  get 'home/show'
+
   resources :users
   root to: 'visitors#index'
   get '/auth/:provider/callback' => 'sessions#create'
