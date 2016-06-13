@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'home/show'
+  get 'hero' => 'home#show', :as => :hero
 
   root to: 'visitors#index'
   get '/auth/:provider/callback' => 'sessions#create'

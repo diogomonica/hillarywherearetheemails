@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     session[:user_id] = user.id
     session[:access_token] = user.oauth_token
     session[:access_secret] = user.oauth_secret
-    redirect_to home_show_url
+    redirect_to hero
   end
 
   def destroy
