@@ -10,18 +10,19 @@ task :has_trump_been_crazy_lately => :environment do
 
     options = {count: 200, include_rts: false, exclude_replies: true}
     if last_tweet != nil
+      punts "last tweet: #{last_tweet.inspect}"
       options[:since_id] = last_tweet.last_id
     end
 
     tweets = client.user_timeline("realDonaldTrump", options)
-  
+
     # Pull new tweets. For a tweet to count it must:
     # * Be newer than the latest one we saw in the database
     # * Not be a reply, native retweet, start with RT/MT, or with "@ which is trump's retweet style
     to_reply = nil
-    tweets.each do |tweet| 
-      if not tweet.text.start_with?('"@') and 
-        not tweet.text.start_with?('RT') and 
+    tweets.each do |tweet|
+      if not tweet.text.start_with?('"@') and
+        not tweet.text.start_with?('RT') and
         not tweet.text.start_with?('MT')
         to_reply = tweet
         break
