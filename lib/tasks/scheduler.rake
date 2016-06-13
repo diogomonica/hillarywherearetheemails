@@ -33,6 +33,10 @@ task :has_trump_been_crazy_lately => :environment do
         Tweet.last.delay.send_tweets!
         puts "schedule task called send_tweets! for tweet id #{to_reply.id}"
     else
+      # If there was no last tweet, we're bootstraping, use trump time
+      if last_tweet == nil {
+        Tweet.create!(last_id: 742096033207844864)
+      }
         puts "no latest tweet found"
     end
 end
