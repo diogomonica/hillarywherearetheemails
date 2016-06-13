@@ -241,17 +241,6 @@ hr.small {
     margin: 10px;
 }
 
-/* Map */
-
-.map {
-    height: 500px;
-}
-
-@media(max-width:768px) {
-    .map {
-        height: 75%;
-    }
-}
 
 /* Footer */
 
