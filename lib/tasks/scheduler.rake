@@ -28,7 +28,7 @@ task :has_trump_been_crazy_lately => :environment do
         break
       end
     end
-    if (to_reply != nil)
+    if to_reply != nil && last_tweet != nil
         last_tweet.update(last_id: to_reply.id)
         Tweet.last.delay.send_tweets!
         puts "schedule task called send_tweets! for tweet id #{to_reply.id}"
