@@ -21,6 +21,6 @@ class User < ActiveRecord::Base
       config.access_token_secret = oauth_secret
     end
 
-    client.update(tweet, options: {in_reply_to_status_id: reply_to})
+    client.update(tweet, in_reply_to_status_id: reply_to)
   end
 end
