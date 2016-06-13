@@ -1,5 +1,10 @@
  class Tweet < ActiveRecord::Base
    def send_tweets!
-        puts "this is a job that is supposed to send tweets to #{User.all.count} users"
+        last_tweet = Tweet.last
+        users = User.all
+        puts "sending tweets to #{users.count} users for #{last_tweet.last_id}"
+        users.each do |user|
+            user.tweet("@realDonaldTrump Delete your account.", last_tweet)
+        end
    end
  end

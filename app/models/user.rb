@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
     end
   end
 
-  def tweet(tweet)
+  def tweet(tweet, reply_to)
     puts "tweet: oauth token: #{oauth_token}"
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = Rails.application.secrets.omniauth_provider_key
@@ -33,6 +33,6 @@ class User < ActiveRecord::Base
       config.access_token_secret = oauth_secret
     end
 
-    client.update(tweet)
+    client.update(tweet, options: {in_reply_to_status_id: reply_to})
   end
 end
