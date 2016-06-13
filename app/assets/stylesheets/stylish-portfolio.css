@@ -30,6 +30,10 @@ body {
     font-weight: 700;
 }
 
+
+.twitter-tweet {
+    margin: auto;
+}
 /* Custom Button Styles */
 
 .btn-dark {
