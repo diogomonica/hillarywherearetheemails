@@ -18,6 +18,8 @@ gem 'high_voltage'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'twitter'
+gem 'delayed_job_active_record'
+
 
 group :development do
   gem 'better_errors'

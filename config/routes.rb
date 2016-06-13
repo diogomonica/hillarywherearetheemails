@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get 'tweets/new'
-
   get 'tweets/create'
+  get 'tweets/check'
 
   get 'home/show'
 

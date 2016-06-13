@@ -6,7 +6,13 @@ class TweetsController < ApplicationController
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-  def new
+  def check
+    last_tweet = Tweet.last
+    if last_tweet == nil
+      Tweet.create!
+    end
+    Tweet.last.delay.send_tweets!
+    return
   end
 
   def create
