@@ -9005,6 +9005,14 @@ body {
     font-weight: 700;
 }
 
+@media only screen and (max-width: 500px) {
+
+   .text-vertical-center h1 {
+    font-size: 3.0em;
+    }
+
+}
+
 
 .twitter-tweet {
     margin: auto;
@@ -9016,6 +9024,7 @@ body {
     color: #fff;
     background-color: rgba(0,0,0,0.4);
 }
+
 
 .btn-dark:hover,
 .btn-dark:focus,
@@ -9134,18 +9143,18 @@ hr.small {
     display: table;
     position: relative;
     width: 100%;
-    height: 70%;
+    height: 60%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     border-bottom-color: #fff;
-    border-bottom-width: 10px;
+    border-bottom-width: 20px;
     border-bottom-style: solid;
 }
 
 .trumped {
     background-size: cover;
     -o-background-size: cover;
-    background-image: url("/images/trump.jpg"), linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/trump.jpg");
     background-position: 50% 50%;
 
 }
@@ -9200,24 +9209,13 @@ hr.small {
 /* Call to Action */
 
 .call-to-action {
-    padding: 50px 0;
+    padding: 10px 0;
 }
 
 .call-to-action .btn {
     margin: 10px;
 }
 
-/* Map */
-
-.map {
-    height: 500px;
-}
-
-@media(max-width:768px) {
-    .map {
-        height: 75%;
-    }
-}
 
 /* Footer */
 
