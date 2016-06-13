@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
-  get 'tweets/create'
-  get 'tweets/check'
-
   get 'home/show'
 
-  resources :users
   root to: 'visitors#index'
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signin' => 'sessions#new', :as => :signin
