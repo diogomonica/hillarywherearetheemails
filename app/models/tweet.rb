@@ -4,7 +4,7 @@
         users = User.all
         puts "sending tweets to #{users.count} users for #{last_tweet.last_id}"
         users.each do |user|
-            user.tweet("@realDonaldTrump Delete your account.", last_tweet)
+            user.tweet("@realDonaldTrump Delete your account. https://twitter.com/realDonaldTrump/status/#{last_tweet.last_id}", last_tweet.last_id)
         end
    end
  end
