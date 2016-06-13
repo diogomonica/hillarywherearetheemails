@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   def self.create_with_omniauth(auth)
-    puts "self.create_with_omniauth: #{auth.inspect}"
     create! do |user|
       user.provider = auth.provider
       user.uid = auth.uid
@@ -13,7 +12,6 @@ class User < ActiveRecord::Base
   end
 
   def tweet(tweet, reply_to)
-    puts "about to tweet: #{tweet}"
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = Rails.application.secrets.omniauth_provider_key
       config.consumer_secret     = Rails.application.secrets.omniauth_provider_secret

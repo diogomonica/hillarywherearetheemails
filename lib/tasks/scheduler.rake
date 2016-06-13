@@ -10,7 +10,6 @@ task :has_trump_been_crazy_lately => :environment do
 
     options = {count: 200, include_rts: false, exclude_replies: true}
     if last_tweet != nil && last_tweet.last_id != nil
-      puts "last tweet: #{last_tweet.inspect}"
       options[:since_id] = last_tweet.last_id
     end
 
