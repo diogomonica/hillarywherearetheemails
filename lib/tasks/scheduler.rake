@@ -6,6 +6,5 @@ task :update_feed => :environment do
     end
     Tweet.last.delay.send_tweets!
     puts "schedulle task called send_tweets!"
-    return
 end
 
