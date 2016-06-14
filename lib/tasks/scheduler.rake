@@ -1,5 +1,5 @@
 desc "This task is called by the Heroku scheduler add-on. It checks for new tweets and schedules responses if needed."
-task :has_trump_been_crazy_lately => :environment do
+task :has_hillary_been_crazy_lately => :environment do
     puts "checking for recent hillary crazyness"
     last_tweet = Tweet.last
 
