@@ -1,6 +1,6 @@
 desc "This task is called by the Heroku scheduler add-on. It checks for new tweets and schedules responses if needed."
 task :has_trump_been_crazy_lately => :environment do
-    puts "checking for recent crazyness"
+    puts "checking for recent hillary crazyness"
     last_tweet = Tweet.last
 
     client = Twitter::REST::Client.new do |config|
@@ -13,7 +13,7 @@ task :has_trump_been_crazy_lately => :environment do
       options[:since_id] = last_tweet.last_id
     end
 
-    tweets = client.user_timeline("realDonaldTrump", options)
+    tweets = client.user_timeline("HillaryClinton", options)
 
     # Pull new tweets. For a tweet to count it must:
     # * Be newer than the latest one we saw in the database
@@ -34,7 +34,7 @@ task :has_trump_been_crazy_lately => :environment do
     else
       # If there was no last tweet, we're bootstraping, use trump time
       if last_tweet == nil
-        Tweet.create!(last_id: 742096033207844864)
+        Tweet.create!(last_id: 742552474628837376)
       end
       puts "no latest tweet found"
     end
