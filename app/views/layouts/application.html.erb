@@ -2,15 +2,29 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "@realDonaldTrump delete your account" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "@realDonaldTrump delete your account" %>">
+    <title><%= content_for?(:title) ? yield(:title) : "@HillaryClinton But where are the emails?" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "@HillaryClinton But where are the emails?" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="icon" href="images/favicon.jpg">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-  
+    <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:title" content="Hillary Where are the emails?">
+  <meta name="twitter:description" content="Every time Hillary tweets, you tweet back.
+">
+  <meta name="twitter:image:src" content="https://hillarywherearetheemails.com/images/hillary_screen.jpg">
+
+
+  <meta property="og:title" content="Ask Hillary, where are the emails?">
+  <meta property="og:site_name" content="Hillary Where are the emails?">
+  <meta property="og:url" content="https://hillarywherearethemails.com">
+  <meta property="og:description" content="Every time Hillary tweets, you tweet back.
+">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://hillarywherearethemails.com/images/hillary_screen.jpg">
   </head>
   <body style="background-color: #337ab7">
       <%= render 'layouts/messages' %>
