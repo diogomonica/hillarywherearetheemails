@@ -176,13 +176,6 @@ hr.small {
     border-bottom-style: solid;
 }
 
-.trumped {
-    background-size: cover;
-    -o-background-size: cover;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/trump.jpg");
-    background-position: 50% 50%;
-}
-
 .shilled {
     background-size: cover;
     -o-background-size: cover;
